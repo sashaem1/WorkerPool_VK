@@ -38,7 +38,7 @@ func (p *WorkerPool) DeletWorkers(count int) error {
 	if len(p.workers) >= count {
 		for i := len(p.workers) - 1; i >= len(p.workers)-count; i-- {
 			p.workers[i].canselFunc()
-			fmt.Printf("Информация: работник номер %d был добавлен\n", p.workers[i].ID)
+			fmt.Printf("Информация: работник номер %d был удалён\n", p.workers[i].ID)
 		}
 		p.workers = p.workers[:len(p.workers)-count]
 

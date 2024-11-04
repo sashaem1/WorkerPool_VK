@@ -28,7 +28,7 @@ func (w *Worker) Process(inputChan chan string, wg *sync.WaitGroup) {
 	defer wg.Done()
 	for str := range inputChan {
 		if err := w.ctx.Err(); err != nil {
-			fmt.Printf("Информация: работник %d завершил работу досрочно\n", w.ID)
+			fmt.Printf("Информация: работник номер %d завершил работу досрочно\n", w.ID)
 			return
 		}
 		fmt.Printf("Данные: %s, номер работника: %d\n", str, w.ID)
